@@ -1,11 +1,4 @@
-ESX = nil
-
-Citizen.CreateThread(function()
-  while ESX == nil do
-    TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-    Citizen.Wait(30)-- Saniye Bekletme
-  end
-end)
+ESX = exports["es_extended"]:getSharedObject()
 
 RegisterNetEvent("zmrentacar:checkMoney")
 AddEventHandler("zmrentacar:checkMoney", function(name,number)
